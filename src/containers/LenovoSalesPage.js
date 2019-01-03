@@ -4,11 +4,14 @@ import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import { Layout, Icon, BackTop } from 'antd';
 import dateFormat  from 'dateFormat';
+import Texty from 'rc-texty';
 
 import * as actions from '../actions/lenovoSalesActions';
 import LenovoSalesTable from '../components/LenovoSalesTable';
 import LenovoSalesSearch from '../components/LenovoSalesSearch';
 import LenovoSalesFilter from '../components/LenovoSalesFilter';
+
+import 'rc-texty/assets/index.css';
 
 const { Header, Footer, Content } = Layout;
 const format = "dddd, mmmm dS, yyyy, h:MM:ss TT";
@@ -46,8 +49,8 @@ class LenovoSalesPage extends React.Component {
             <Layout theme="light" style={{width: "90%", margin: "0 auto"}}>
                 <Header style={{height: 110, background: "white"}}>
                     <Icon type="laptop" style={{display: "inline-block", marginRight: 5, paddingTop: 10, fontSize: 25}}/>
-                    <div style={{display: "inline-block", marginTop: 10, fontSize: 30, fontWeight: 500, lineHeight: "40px"}}>Lenovo Watch</div>
-                    <div style={{fontSize: 15, fontWeight: 300, lineHeight: "20px"}}>Great deals on 1561 discounted laptops at Lenovo US Outlet</div>
+                    <div style={{display: "inline-block", marginTop: 10, fontSize: 30, fontWeight: 500, lineHeight: "40px"}}><Texty type="left">Lenovo Watch</Texty></div>
+                    <div style={{fontSize: 15, fontWeight: 300, lineHeight: "20px"}}>Great deals on {this.props.lenovoSales.data.length} discounted laptops at Lenovo US Outlet</div>
                 </Header>
                 <Content style={{background: "white"}}>
                     <LenovoSalesFilter selectedFilters={this.state.selectedFilters} applyFilter={this.applyFilter}/>
