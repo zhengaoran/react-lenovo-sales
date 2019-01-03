@@ -6,7 +6,7 @@ const mobileColumns = [
         title: 'Model',
         dataIndex: 'model',
         width: 150,
-        sorter: (a, b) => a.model > b.model ? -1 : 1,
+        sorter: (a, b) => a.model > b.model,
     }, 
     {
         title: 'Condition',
@@ -23,10 +23,10 @@ const mobileColumns = [
                 const priceA = parseFloat(a.price.substring(1).replace(/,/g, ''));
                 const priceB = parseFloat(b.price.substring(1).replace(/,/g, ''));
     
-                return priceA - priceB;
+                return priceA > priceB;
             }
             catch(error){
-                return a.price - b.price;
+                return a.price > b.price;
             }
         }
     },
@@ -39,10 +39,10 @@ const mobileColumns = [
                 const discountA = parseFloat(a.discount.substring(1).replace(/,/g, ''));
                 const discountB = parseFloat(b.discount.substring(1).replace(/,/g, ''));
     
-                return discountA - discountB;
+                return discountA > discountB;
             }
             catch(error){
-                return a.discount - b.discount;
+                return a.discount > b.discount;
             }
         },
         widthToHide: 1024

@@ -51,7 +51,9 @@ class LenovoSalesTable extends React.Component {
                 return item[key].toLowerCase().indexOf(value.toLowerCase()) === -1;
             });
             
-            let searchNotMatched = searchToken.length > 0 && Object.entries(item).find(([key, value]) => value.toLowerCase().indexOf(searchToken) === -1);
+            let searchNotMatched = searchToken.length > 0 && !Object.entries(item).find(([key, value]) => {
+                return key !== "url" && key !== "partNumber" && value.toLowerCase().indexOf(searchToken) > -1;
+            });
 
             return !filterNotMatched && !searchNotMatched;
         })
@@ -65,6 +67,7 @@ class LenovoSalesTable extends React.Component {
                     rowKey={data => data.partNumber}
                     pagination={paginationConfig}
                     loading={this.props.isLoading}
+                    locale={{emptyText: "No sales found"}}
                 />
             </div>
         )
