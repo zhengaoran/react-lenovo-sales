@@ -1,3 +1,7 @@
-// Set up your root reducer here...
- import { combineReducers } from 'redux';
- export default combineReducers;
+import { combineReducers } from 'redux';
+import lenovoSales from './lenovoSalesReducer';
+
+const rootReducer = combineReducers({
+    lenovoSales
+})
+export default rootReducer;

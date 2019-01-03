@@ -1,1 +1,4 @@
-// Must have at least one test file in this directory or Mocha will throw an error.
+// empty test case
+describe('<LenovoSalesPage />', () => {
+    it('should match snapshot', () => {})
+})
