@@ -26,7 +26,7 @@ class LenovoSalesTable extends React.Component {
 
     componentDidMount(){
         this.props.startLoading();
-        axios.get('https://lw.ofwiz.com/parts').then(response => this.props.fetchSales(response));
+        axios.get('https://lw.slob.in/parts').then(response => this.props.fetchSales(response));
     }
 
     changePageView = windowWidth => {
