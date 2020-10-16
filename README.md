@@ -1,7 +1,7 @@
 # React Lenovo Sales
 
-    React Application(https://react-lenovo-sales.herokuapp.com/) for sharing great deals on discounted laptops at Lenovo US Outlet
-
+   React Application for sharing great deals on discounted laptops at Lenovo US Outlet
+   (https://react-lenovo-sales.herokuapp.com/)
 ---
 
 ## Get Started
