@@ -31,7 +31,7 @@
   "license": "MIT",
   "dependencies": {
     "antd": "3.11.6",
-    "axios": "0.18.1",
+    "axios": "0.21.1",
     "connected-react-router": "4.4.1",
     "dateformat": "3.0.3",
     "object-assign": "4.1.1",
